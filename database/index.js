@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 //configure for heroku env
-mongoose.connect(process.env.MONGODB_URI); //'mongodb://localhost/fetcher'
+mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/fetcher');
 
 let repoSchema = mongoose.Schema({
   // TODO: your schema here!

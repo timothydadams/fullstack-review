@@ -23,6 +23,7 @@ app.post('/repos', function (req, res) {
     for (var i = 0; i < data.length; i++) {
       db.save(data[i]);
     }
+    res.sendStatus(200);
   });
 });
 
