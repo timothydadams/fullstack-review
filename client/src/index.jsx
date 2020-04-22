@@ -40,7 +40,7 @@ class App extends React.Component {
       data: JSON.stringify({ 'username': term }),
       contentType: 'application/json'
     })
-    .done(data => {
+    .done(() => {
       console.log('i made it this far');
       this.checkServer();
     })
