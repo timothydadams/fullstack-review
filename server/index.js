@@ -5,6 +5,7 @@ const parser = require('body-parser');
 const db = require('../database/index');
 
 app.use(express.static(__dirname + '/../client/dist'));
+
 app.use(parser.json());
 
 app.post('/repos', function (req, res) {
@@ -31,11 +32,9 @@ app.get('/repos', function (req, res) {
     if (err) return console.log(err);
     res.json(data);
   });
-  //console.log(topRepos);
-  //res.json(topRepos);
 });
-
-let port = process.env.port || 8000;
+//configure for heroku env
+let port = process.env.PORT || 8000; //1128
 
 app.listen(port, function() {
   console.log(`listening on port ${port}`);
