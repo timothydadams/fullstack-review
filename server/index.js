@@ -35,7 +35,7 @@ app.get('/repos', function (req, res) {
   //res.json(topRepos);
 });
 
-let port = 1128;
+let port = process.env.port || 8000;
 
 app.listen(port, function() {
   console.log(`listening on port ${port}`);
